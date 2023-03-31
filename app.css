@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, h6, p {
   z-index: 9997;
   transition: all 0.5s;
   padding: 15px;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 @media (max-width: 800px) {
@@ -133,7 +133,7 @@ h1, h2, h3, h4, h5, h6, p {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 .goldbox{
