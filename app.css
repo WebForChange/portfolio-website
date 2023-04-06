@@ -71,7 +71,7 @@ h1, h2, h3, h4, h5, h6, p {
   transition: 0.3s;
   font-size: 15px;
   border-radius: 50px;
-  background: #f2f3f5;
+  background: #ffffff;
   height: 56px;
   width: 100%;
   overflow: hidden;
@@ -204,13 +204,18 @@ section {
 
 #home .social-links a {
   display: inline-block;
-  color: #f3c316;
+  height: 45px;
+  width: 45px;
+  padding: 10px;
+  color: #fff;
   line-height: 1;
   transition: 0.3s;
+  background: #F5D468;
+  border-radius: 50%;
 }
 
 #home .social-links a:hover {
-  color: #0563bb;
+  background: #0563bb;
 } 
 
 /*--------------------------------------------------------------
