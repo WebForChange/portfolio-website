@@ -191,9 +191,12 @@ section .goldbox p {
 }
 
 @media (max-width: 500px) {
-  #home {
-    font-size: 0.6em;
+  #home h2{
+    font-size: 1.5em;
   }
+
+  #home p{
+    font-size: 0.8em;}
 }
 
 #portrait {  
