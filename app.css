@@ -2,12 +2,18 @@
 # General
 --------------------------------------------------------------*/
 
-body{
+body {
   font-family: "Open Sans", sans-serif;
   background-color: #fff;
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   font-family: "Poppins", sans-serif;
 }
 
@@ -29,7 +35,9 @@ p .accent {
 --------------------------------------------------------------*/
 #header {
   position: fixed;
-  top: 0; bottom: 0; left: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
   z-index: 9997;
   transition: all 0.5s;
   padding: 15px;
@@ -62,7 +70,7 @@ p .accent {
   padding: 0;
   display: block;
 } */
-  
+
 .nav-menu * {
   /* margin: 0;
   padding: 0; */
@@ -153,8 +161,9 @@ section .col {
   margin: 0;
 }
 
-section .goldbox{
+section .goldbox {
   display: inline-block;
+  overflow: hidden;
   width: 100%;
   border: 0.1rem solid #f3c316;
   border-radius: 30px;
@@ -162,10 +171,10 @@ section .goldbox{
   padding: 10px 0 45px 0;
 }
 
-section .goldbox h2 {
+#about .goldbox h2 {
   margin: 0;
   padding: 0;
-  font-size: 2.3em;
+  font-size: 2.3rem;
   font-weight: 400;
   /* line-height: 56px; */
   color: #5e5e5e;
@@ -175,9 +184,8 @@ section .goldbox h2 {
 section .goldbox p {
   text-align: center;
   color: #f3c316;
-  font-size: 1.3em;
+  font-size: 1.3rem;
   font-family: "Poppins", sans-serif;
-  letter-spacing: 2px;
 }
 
 /*--------------------------------------------------------------
@@ -187,26 +195,49 @@ section .goldbox p {
   width: 100%;
   padding-top: 20px;
   text-align: center;
-  font-size: 0.9em;
 }
 
-@media (max-width: 500px) {
-  #home h2{
-    font-size: 1.5em;
+#home .goldbox {
+  padding: 50px 60px;
+}
+
+#home h2 {
+  margin-bottom: 0;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #5e5e5e;
+}
+
+#home p {
+  font-size: 1.25rem;
+}
+
+/* @media (max-width: 500px) {
+  #home h2 {
+    font-size: 0.5 em;
+    letter-spacing: 0;
   }
 
-  #home p{
-    font-size: 0.8em;}
+  #home p {
+    font-size: 1.2em;
+    letter-spacing: 0;
+  }
 }
 
-#portrait {  
+@media (max-width: 400px) {
+  #home h2 {
+    font-size: 1 em;
+  }
+} */
+
+#portrait {
   position: relative;
-  width: 70%;
-  height: 0;
-  margin: 10% 15% 5%;
-  padding-bottom: 70%;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding-bottom: 100%;
   border-radius: 50%;
-  background: url("assets/img/home-portrait.jpg") ;
+  background: url("assets/img/home-portrait.jpg");
   background-size: cover;
   background-position: 0% 30%;
   box-shadow: inset 0 0 0 1000px rgba(253, 249, 237, 0.3);
@@ -229,14 +260,15 @@ section .goldbox p {
   border-radius: 50%;
 }
 
-#home .social-links a:hover {
+#home .social-links a.linkedin:hover {
   background: #0563bb;
-} 
+}
 
 /*--------------------------------------------------------------
 # About
 --------------------------------------------------------------*/
-#about h3, h4 {
+#about h3,
+h4 {
   margin-bottom: 15px;
   font-weight: 400;
   color: #5e5e5e;
@@ -247,7 +279,7 @@ section .goldbox p {
   font-size: 1.8em;
 }
 
-#about h4{
+#about h4 {
   text-align: center;
   font-weight: 400;
   margin-top: 40px;
