@@ -2,11 +2,9 @@
 (function () {
   "use strict";
 
-  /**
-   * Easy selector helper function
-   */
+  //Selector function
   const select = (el, all = false) => {
-    el = el.trim()
+    el = el.trim();
     if (all) {
       return [...document.querySelectorAll(el)]
     } else {
@@ -14,11 +12,9 @@
     }
   }
 
-  /**
-   * Easy event listener function
-   */
+  // Event listener function
   const on = (type, el, listener, all = false) => {
-    let selectEl = select(el, all)
+    let selectEl = select(el, all);
     if (selectEl) {
       if (all) {
         selectEl.forEach(e => e.addEventListener(type, listener))
@@ -28,22 +24,13 @@
     }
   }
 
-  /**
-   * Easy on scroll event listener 
-   */
-  const onscroll = (el, listener) => {
-    el.addEventListener('scroll', listener)
-  }
-
-  /**
-   * Navbar links active state on scroll
-   */
-  let navbarlinks = select('#navbar .scrollto', true)
+  // Navbar links active state on scroll
+  let navbarlinks = select('#navbar .scrollto', true);
   const navbarlinksActive = () => {
-    let position = window.scrollY + 200
+    let position = window.scrollY + 200;
     navbarlinks.forEach(navbarlink => {
       if (!navbarlink.hash) return
-      let section = select(navbarlink.hash)
+      let section = select(navbarlink.hash);
       if (!section) return
       if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
         navbarlink.classList.add('active')
@@ -53,12 +40,10 @@
     })
   }
 
-  window.addEventListener('load', navbarlinksActive)
-  onscroll(document, navbarlinksActive)
+  window.addEventListener('load', navbarlinksActive);
+  document.addEventListener('scroll', navbarlinksActive);
 
-  /**
-   * Scrolls to an element with header offset
-   */
+  // Scrolls to an element with header offset
   const scrollto = (el) => {
     let elementPos = select(el).offsetTop
     window.scrollTo({
@@ -67,10 +52,8 @@
     })
   }
 
-  /**
-   * Back to top button
-   */
-  let backtotop = select('.back-to-top')
+  // Back to top button
+  let backtotop = select('.back-to-top');
   if (backtotop) {
     const toggleBacktotop = () => {
       if (window.scrollY > 100) {
@@ -79,8 +62,8 @@
         backtotop.classList.remove('active')
       }
     }
-    window.addEventListener('load', toggleBacktotop)
-    onscroll(document, toggleBacktotop)
+    window.addEventListener('load', toggleBacktotop);
+    document.addEventListener('scroll', toggleBacktotop);
   }
 
   /**
