@@ -2,7 +2,7 @@
 (function () {
   "use strict";
 
-  //Selector function
+  //Selector
   const select = (el, all = false) => {
     el = el.trim();
     if (all) {
@@ -24,14 +24,14 @@
     }
   }
 
-  // Navbar links active state on scroll
+  // Highlight current section in navbar 
   let navbarlinks = select('#navbar .scrollto', true);
   const navbarlinksActive = () => {
     let position = window.scrollY + 200;
     navbarlinks.forEach(navbarlink => {
-      if (!navbarlink.hash) return
+      if (!navbarlink.hash) return;
       let section = select(navbarlink.hash);
-      if (!section) return
+      if (!section) return;
       if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
         navbarlink.classList.add('active')
       } else {
@@ -43,7 +43,7 @@
   window.addEventListener('load', navbarlinksActive);
   document.addEventListener('scroll', navbarlinksActive);
 
-  // Scrolls to an element with header offset
+  // Scroll to an element
   const scrollto = (el) => {
     let elementPos = select(el).offsetTop
     window.scrollTo({
@@ -52,32 +52,7 @@
     })
   }
 
-  // Back to top button
-  let backtotop = select('.back-to-top');
-  if (backtotop) {
-    const toggleBacktotop = () => {
-      if (window.scrollY > 100) {
-        backtotop.classList.add('active')
-      } else {
-        backtotop.classList.remove('active')
-      }
-    }
-    window.addEventListener('load', toggleBacktotop);
-    document.addEventListener('scroll', toggleBacktotop);
-  }
-
-  /**
-   * Mobile nav toggle
-   */
-  on('click', '.mobile-nav-toggle', function (e) {
-    select('body').classList.toggle('mobile-nav-active')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
-  })
-
-  /**
-   * Scroll with offset on links with a class name .scrollto
-   */
+  // Scroll with offset on links with a class name .scrollto
   on('click', '.scrollto', function (e) {
     if (select(this.hash)) {
       e.preventDefault()
@@ -93,9 +68,7 @@
     }
   }, true)
 
-  /**
-   * Scroll with ofset on page load with hash links in the url
-   */
+  //Scroll with ofset on page load with hash links in the url
   window.addEventListener('load', () => {
     if (window.location.hash) {
       if (select(window.location.hash)) {
@@ -104,15 +77,44 @@
     }
   });
 
-  /**
-   * Preloader
-   */
-  let preloader = select('#preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove()
-    });
-  }
+  // Animation on scroll
+  window.addEventListener('load', () => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    })
+  });
+
+  // Back to top button
+  // let backtotop = select('.back-to-top');
+  // if (backtotop) {
+  //   const toggleBacktotop = () => {
+  //     if (window.scrollY > 100) {
+  //       backtotop.classList.add('active')
+  //     } else {
+  //       backtotop.classList.remove('active')
+  //     }
+  //   }
+  //   window.addEventListener('load', toggleBacktotop);
+  //   document.addEventListener('scroll', toggleBacktotop);
+  // }
+
+  // Mobile nav toggle
+  // on('click', '.mobile-nav-toggle', function (e) {
+  //   select('body').classList.toggle('mobile-nav-active')
+  //   this.classList.toggle('bi-list')
+  //   this.classList.toggle('bi-x')
+  // })
+
+  // Preloader
+  // let preloader = select('#preloader');
+  // if (preloader) {
+  //   window.addEventListener('load', () => {
+  //     preloader.remove()
+  //   });
+  // }
 
   /**
    * Hero type effect
@@ -228,21 +230,7 @@
   //   }
   // });
 
-  /**
-   * Animation on scroll
-   */
-  window.addEventListener('load', () => {
-    AOS.init({
-      duration: 1000,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
-    })
-  });
-
-  /**
-   * Initiate Pure Counter 
-   */
-  new PureCounter();
+  // Initiate Pure Counter
+  // new PureCounter();
 
 })()
