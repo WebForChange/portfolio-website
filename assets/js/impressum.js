@@ -6,7 +6,8 @@
         // Spam Protection
         const em = "@devcomsuessdorfilgma.";
         const mo = "+12345789";
-
+        
+        // Rearranging the characters to form contact info
         email.textContent = em.substring(7, 16) + em.slice(-1) +
             em.substring(1, 4) + em[0] + em.substring(18, 21) +
             em.substring(16,18) + em.slice(-1) + em.substring(4, 7);
