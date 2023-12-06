@@ -1,4 +1,4 @@
-# Tonio Suessdorf's *former* Portfolio Website
+# Tonio Suessdorf's *Former* Portfolio Website
 
 Welcome to the first website I ever made.
 
